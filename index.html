@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+  <title>Select Unique</title>
+  <style type="text/css">
+   .section {
+       border-bottom: 1px solid #eee;
+       padding-bottom: 4px;
+   }
+
+   .demo textarea {
+       width: 500px;
+       height: 65px;
+   }
+
+   .controls {
+       padding: 10px 0 4px;
+   }
+
+   .controls a {
+       margin-right: 4px;
+   }
+  </style>
+
+  <script src="select-unique.min.js"></script>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+       window.questions = new SelectUnique('.questions select');
+       window.favorites = new SelectUnique('.favorites select', {ignoreOption: (opt) => opt.value.match(/^#/)});
+
+       document.querySelectorAll('.code a').forEach(anchor => {
+           anchor.addEventListener('click', e => {
+               e.preventDefault();
+
+               const code = e.target.parentNode.nextElementSibling;
+               code.style.display = code.style.display === 'none' ? 'block' : 'none';
+           });
+       });
+
+       document.querySelector('.questions a.selected').addEventListener('click', e => {
+           e.preventDefault();
+           document.querySelector('.questions .demo textarea').textContent = JSON.stringify(questions.selected());
+       });
+
+       document.querySelector('.questions a.remaining').addEventListener('click', e => {
+           e.preventDefault();
+           document.querySelector('.questions .demo textarea').textContent = JSON.stringify(questions.remaining());
+       });
+
+       document.querySelector('.favorites a.selected').addEventListener('click', e => {
+           e.preventDefault();
+           document.querySelector('.favorites .demo textarea').textContent = JSON.stringify(favorites.selected());
+       });
+
+       document.querySelector('.favorites a.remaining').addEventListener('click', e => {
+           e.preventDefault();
+           document.querySelector('.favorites .demo textarea').textContent = JSON.stringify(favorites.remaining());
+       });
+   });
+  </script>
+</head>
+<body>
+  <h1>Select Unique</h1>
+  <div class="section">
+    <p>Given a group of select fields with the same options, Select Unique will remove an option from the other select fields when it's selected, and put it back when it's changed.</p>
+    <ul>
+      <li><a href="http://github.com/sshaw/select-unique#usage">Install</a></li>
+      <li><a href="#demo">Demo</a></li>
+    </ul>
+  </div>
+  <div id="demo" class="section questions">
+    <h2>Demo</h2>
+    <h3>Answer three questions</h3>
+    <div class="demo">
+      <div>
+	<select>
+	  <option></option>
+	  <option>First car</option>
+	  <option>Highschool's name</option>
+	  <option>Mom's birthday</option>
+	  <option>Dad's middle name</option>
+	  <option>First pet</option>
+	</select>
+	<input type="text" size="35"/>
+      </div>
+      <div>
+	<select>
+	  <option></option>
+	  <option>First car</option>
+	  <option>Highschool's name</option>
+	  <option>Mom's birthday</option>
+	  <option>Dad's middle name</option>
+	  <option>First pet</option>
+	</select>
+	<input type="text" size="35"/>
+      </div>
+      <div>
+	<select>
+	  <option></option>
+	  <option>First car</option>
+	  <option>Highschool's name</option>
+	  <option>Mom's birthday</option>
+	  <option>Dad's middle name</option>
+	  <option>First pet</option>
+	</select>
+	<input type="text" size="35"/>
+      </div>
+      <div class="controls">
+	<a href="#" class="selected">Selected Options</a>
+	<a href="#" class="remaining">Remaining Options</a>
+      </div>
+      <div>
+	<textarea></textarea>
+      </div>
+    </div>
+    <div class="code">
+      <small><a href="#">View Code</a></small>
+      <pre style="display:none">
+&lt;script src="select-unique.min.js"&gt;&lt;/script&gt;
+&lt;script>
+var questions = new SelectUnique('.questions select');
+
+document.querySelector('.questions a.selected').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.questions .demo textarea').textContent = JSON.stringify(questions.selected());
+});
+
+document.querySelector('.questions a.remaining').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.questions .demo textarea').textContent = JSON.stringify(questions.remaining());
+});
+&gt;script>
+      </pre>
+    </div>
+  </div>
+  <div class="section favorites">
+    <h3>Pick your favorite countries</h3>
+    <div class="demo">
+    <select>
+      <option>#1</option>
+      <option value="BR">Brazil</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="MX">Mexico</option>
+      <option value="RU">Russia</option>
+      <option value="SP">Spain</option>
+      <option value="GB">Great Britton</option>
+      <option value="US">United States</option>
+    </select>
+    <select>
+      <option>#2</option>
+      <option value="BR">Brazil</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="MX">Mexico</option>
+      <option value="RU">Russia</option>
+      <option value="SP">Spain</option>
+      <option value="GB">Great Britton</option>
+      <option value="US">United States</option>
+    </select>
+    <select>
+      <option>#3</option>
+      <option value="BR">Brazil</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="MX">Mexico</option>
+      <option value="SP">Spain</option>
+      <option value="RU">Russia</option>
+      <option value="GB">Great Britton</option>
+      <option value="US">United States</option>
+    </select>
+    <select>
+      <option>#4</option>
+      <option value="BR">Brazil</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="MX">Mexico</option>
+      <option value="RU">Russia</option>
+      <option value="SP">Spain</option>
+      <option value="GB">Great Britton</option>
+      <option value="US">United States</option>
+    </select>
+    <select>
+      <option>#5</option>
+      <option value="BR">Brazil</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="MX">Mexico</option>
+      <option value="RU">Russia</option>
+      <option value="SP">Spain</option>
+      <option value="GB">Great Britton</option>
+      <option value="US">United States</option>
+    </select>
+    <div class="controls">
+      <a href="#" class="selected">Selected Options</a>
+      <a href="#" class="remaining">Remaining Options</a>
+    </div>
+    <div>
+      <textarea></textarea>
+    </div>
+    </div>
+    <div class="code">
+      <small><a href="#">View Code</a></small>
+      <pre style="display:none">
+&lt;script src="select-unique.min.js"&gt;&lt;/script&gt;
+&lt;script>
+var favorites = new SelectUnique('.favorites select', {ignoreOption: (opt) => opt.value.match(/^#/)});
+
+document.querySelector('.favorites a.selected').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.favorites .demo textarea').textContent = JSON.stringify(favorites.selected());
+});
+
+document.querySelector('.favorites a.remaining').addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector('.favorites .demo textarea').textContent = JSON.stringify(favorites.remaining());
+});
+&gt;script>
+      </pre>
+    </div>
+  </div>
+</body>
+</html>
