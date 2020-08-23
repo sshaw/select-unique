@@ -7,7 +7,8 @@
         "build": "npx webpack -p",
         "build:web": "TARGET=web npx webpack -p",
         "build:dev": "npx webpack",
-        "build:dev:web": "TARGET=web npx webpack"
+        "build:dev:web": "TARGET=web npx webpack",
+        "test": "jest"
     },
     "keywords": [
         "html",
@@ -23,7 +24,10 @@
         "@babel/cli": "^7.10.3",
         "@babel/core": "^7.10.3",
         "@babel/preset-env": "^7.4.5",
+        "@testing-library/dom": "^7.22.5",
+        "@testing-library/jest-dom": "^5.11.4",
         "babel-loader": "^8.0.6",
+        "jest": "^26.4.2",
         "webpack": "^4.35.0",
         "webpack-cli": "^3.3.5"
     }

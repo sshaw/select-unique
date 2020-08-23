@@ -7,10 +7,10 @@ Checkout the demo [here](https://sshaw.github.io/select-unique#demo).
 
 ## Usage
 
-* [webpack, etc...](#webpack-etc)
+* [Babel, webpack, etc...](#babel-webpack-etc)
 * [Client-side](#client-side)
 
-### webpack, etc...
+### Babel, webpack, etc...
 
 ```
 npm install select-unique
@@ -50,7 +50,7 @@ const selects new SelectUnique(selector, {
 });
 ```
 
-You can also retrieve what's currently selected or remaining:
+You can also retrieve what's currently selected or remaining within the group:
 ```js
 selects.remaining().forEach(option => {
     console.log(`text: ${option.text}  value: ${option.value}`);

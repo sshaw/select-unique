@@ -8,12 +8,12 @@ class SelectUnique {
         this.selectElements = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
         this.selectChanged = this.selectChanged.bind(this);
 
-        if(!this.selectElements.length)
+        if(!this.selectElements || !this.selectElements.length)
             throw new Error('No HTMLSelectElements found');
 
         for(let e of this.selectElements) {
             if(!(e instanceof HTMLSelectElement))
-                throw new Error(`Only HTMLSelectElement are accepted, found ${e}`);
+                throw new Error(`Only HTMLSelectElements are accepted: found ${e.nodeName}`);
         };
 
         const allOptions = Array.from(this.selectElements).flatMap(select => Array.from(select.options));
