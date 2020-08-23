@@ -12,7 +12,8 @@
     },
     "keywords": [
         "html",
-        "select"
+        "select",
+        "unique"
     ],
     "author": "Skye Shaw <skye.shaw@gmail.com>",
     "license": "MIT",
