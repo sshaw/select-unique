@@ -16,8 +16,7 @@ class SelectUnique {
                 throw new Error(`Only HTMLSelectElements are accepted: found ${e.nodeName}`);
         };
 
-        const allOptions = Array.from(this.selectElements).flatMap(select => Array.from(select.options));
-        this.uniqueOptions(allOptions).forEach((option, index) => {
+        this.uniqueOptions(this.selectElements).forEach((option, index) => {
             const id = this.optionId(option);
 
             this.optionPool[id] = option;
@@ -58,17 +57,19 @@ class SelectUnique {
         });
     }
 
-    uniqueOptions(options) {
+    uniqueOptions(selects) {
         const unique = [], seen = new Set();
 
-        for(let option of options) {
-            const key = this.optionId(option);
+        for(let select of selects) {
+            for(let option of select.options) {
+                const key = this.optionId(option);
 
-            if(!seen.has(key) && !this.ignoreOption(option)) {
-                seen.add(key);
-                unique.push(option);
+                if(!seen.has(key) && !this.ignoreOption(option)) {
+                    seen.add(key);
+                    unique.push(option);
+                }
             }
-        };
+        }
 
         return unique;
     }

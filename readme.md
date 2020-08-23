@@ -1,5 +1,7 @@
 # Select Unique
 
+[![Build Status](https://travis-ci.org/sshaw/select-unique.svg?branch=master)](https://travis-ci.org/sshaw/select-unique)
+
 Given a group of HTML select elements with the same options, Select Unique will remove an option from the other select
 elements when it's selected, and put it back when it's changed.
 
