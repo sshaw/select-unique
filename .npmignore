@@ -1,3 +1,4 @@
+*.tgz
 .travis.yml
 *.config.js
 index.test.js
