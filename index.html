@@ -22,7 +22,7 @@
    }
   </style>
 
-  <script src="select-unique.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select-unique@0.0.2/dist/select-unique.min.js"></script>
   <script>
    document.addEventListener('DOMContentLoaded', () => {
        window.questions = new SelectUnique('.questions select');
@@ -116,7 +116,7 @@
     <div class="code">
       <small><a href="#">View Code</a></small>
       <pre style="display:none">
-&lt;script src="select-unique.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/select-unique@0.0.2/dist/select-unique.min.js"&gt;&lt;/script&gt;
 &lt;script>
 var questions = new SelectUnique('.questions select');
 
@@ -129,7 +129,7 @@ document.querySelector('.questions a.remaining').addEventListener('click', e => 
     e.preventDefault();
     document.querySelector('.questions .demo textarea').textContent = JSON.stringify(questions.remaining());
 });
-&gt;script>
+&lt;script>
       </pre>
     </div>
   </div>
@@ -202,7 +202,7 @@ document.querySelector('.questions a.remaining').addEventListener('click', e => 
     <div class="code">
       <small><a href="#">View Code</a></small>
       <pre style="display:none">
-&lt;script src="select-unique.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/select-unique@0.0.2/dist/select-unique.min.js"&gt;&lt;/script&gt;
 &lt;script>
 var favorites = new SelectUnique('.favorites select', {ignoreOption: (opt) => opt.value.match(/^#/)});
 
@@ -215,7 +215,7 @@ document.querySelector('.favorites a.remaining').addEventListener('click', e => 
     e.preventDefault();
     document.querySelector('.favorites .demo textarea').textContent = JSON.stringify(favorites.remaining());
 });
-&gt;script>
+&lt;script>
       </pre>
     </div>
   </div>
