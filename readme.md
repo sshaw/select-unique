@@ -65,18 +65,19 @@ selects.selected().forEach(option => {
 
 ### Client-side
 
-Download `select-unique.min.js` from [Latest Releases](https://github.com/sshaw/select-unique/releases/latest) or build it
-yourself via `npm run build:web` and include it in your html page:
+Include it in your html page (from jsdelivr or cdnjs):
 ```html
 <div id="my-select-group">
   <!-- A bunch of selects -->
 </div>
 
-<script src="select-unique.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select-unique@VERSION/dist/select-unique.min.js"></script>
 <script>
   new SelectUnique('#my-select-group select');
 </script>
 ```
+
+Replace `VERSION` in the `src` URL with the desired version.
 
 ## See Also
 
