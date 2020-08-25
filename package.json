@@ -2,12 +2,9 @@
     "name": "select-unique",
     "version": "0.0.2",
     "description": "Given a group of HTML select elements with the same options, Select Unique will remove an option from the other select elements when it's selected, and put it back when it's changed.",
-    "main": "index.js",
     "scripts": {
-        "build": "npx webpack -p",
-        "build:web": "TARGET=web npx webpack -p",
-        "build:dev": "npx webpack",
-        "build:dev:web": "TARGET=web npx webpack",
+        "build": "npx webpack -p && TARGET=web npx webpack -p",
+        "build:dev": "npx webpack && TARGET=web npx webpack",
         "test": "jest"
     },
     "keywords": [
@@ -22,6 +19,9 @@
         "type": "git",
         "url": "https://github.com/sshaw/select-unique.git"
     },
+    "browser": "dist/select-unique.js",
+    "jsdelivr": "dist/select-unique.min.js",
+    "unpkg": "dist/select-unique.min.js",
     "devDependencies": {
         "@babel/cli": "^7.10.3",
         "@babel/core": "^7.10.3",

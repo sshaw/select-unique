@@ -1,7 +1,7 @@
 const path = require('path');
 
 const output = process.env.TARGET === 'web' ?
-      { filename: 'select-unique.min.js', libraryTarget: 'window', libraryExport: 'default' } :
+      { filename: 'select-unique.min.js', libraryTarget: 'var', libraryExport: 'default' } :
       { filename: 'select-unique.js', libraryTarget: 'umd' };
 
 const config = {
