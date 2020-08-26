@@ -21,7 +21,6 @@
     },
     "browser": "dist/select-unique.js",
     "jsdelivr": "dist/select-unique.min.js",
-    "unpkg": "dist/select-unique.min.js",
     "devDependencies": {
         "@babel/cli": "^7.10.3",
         "@babel/core": "^7.10.3",

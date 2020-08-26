@@ -1,6 +1,7 @@
 # Select Unique
 
 [![Build Status](https://travis-ci.org/sshaw/select-unique.svg?branch=master)](https://travis-ci.org/sshaw/select-unique)
+[![](https://data.jsdelivr.com/v1/package/npm/select-unique/badge)](https://www.jsdelivr.com/package/npm/select-unique)
 
 Given a group of HTML select elements with the same options, Select Unique will remove an option from the other select
 elements when it's selected, and put it back when it's changed.
@@ -65,19 +66,17 @@ selects.selected().forEach(option => {
 
 ### Client-side
 
-Include it in your html page (from jsdelivr or cdnjs):
+Include it in your html page (or [download it](https://www.jsdelivr.com/package/npm/select-unique) and include it):
 ```html
 <div id="my-select-group">
   <!-- A bunch of selects -->
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/select-unique@VERSION/dist/select-unique.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select-unique@latest/dist/select-unique.min.js"></script>
 <script>
   new SelectUnique('#my-select-group select');
 </script>
 ```
-
-Replace `VERSION` in the `src` URL with the desired version.
 
 ## See Also
 
